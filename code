@@ -1,0 +1,29 @@
+import java.util.Scanner;
+
+public class WLTicketConfirmation {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        System.out.println("Enter your Waitlist (WL) number: ");
+        int wlNumber = sc.nextInt();
+
+        System.out.println("Enter total quota for the train/class: ");
+        int quota = sc.nextInt();
+
+        System.out.println("Enter days left for journey: ");
+        int daysLeft = sc.nextInt();
+
+        double chance = calculateChance(wlNumber, quota, daysLeft);
+        System.out.printf("Estimated chance of WL confirmation: %.2f%%\n", chance * 100);
+
+        sc.close();
+    }
+    public static double calculateChance(int wlNumber, int quota, int daysLeft) {
+        if (wlNumber <= 0) return 1.0;
+        if (daysLeft <= 0) return 0.0; 
+        double base = (double)quota / (wlNumber + quota);
+        double timeFactor = Math.min(1.0, daysLeft / 10.0);
+        double chance = base * timeFactor;
+        return Math.max(0, Math.min(1, chance));
+    }
+}
