@@ -18,7 +18,7 @@ public class WLTicketConfirmation {
 
         sc.close();
     }
-    public static double calculateChance(int wlnum, int quota, int daysLeft) {
+    public static double  calculateChance(int wlnum, int quota, int daysLeft) {
         if (wlnum <= 0) return 1.0;
         if (daysLeft <= 0) return 0.0; 
         double base = (double)quota / (wlnum + quota);
