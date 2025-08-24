@@ -12,7 +12,6 @@ public class WLTicketConfirmation {
 
         System.out.println("Enter days left for journey: ");
         int daysLeft = sc.nextInt();
-
         double chance = calculateChance(wlnum, quota, daysLeft);
         System.out.printf("Estimated chance of WL confirmation: %.2f%%\n", chance * 100);
 
