@@ -7,7 +7,7 @@ public class WLTicketConfirmation {
         System.out.println("Enter your Waitlist(WL) number: ");
         int wlnum = sc.nextInt();
 
-        System.out.println("Enter total quota for the train/class: ");
+       System.out.println("Enter total quota for the train/class: ");
         int quota = sc.nextInt();
 
         System.out.println("Enter days left for journey: ");
